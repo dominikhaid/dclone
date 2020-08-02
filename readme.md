@@ -39,7 +39,7 @@ How ether it will work with every docker container.
 5. set VOLUME variables like VOLUME=(MyContainer1!volumeName:/path/in/docker
    MyContainer2!./mount/path:/path/in/docker)
 
-**notes**
+**note**
 
 ```
 volumes schema is ContainerName then ! to split the string then VolumeName:/path/in/docker
@@ -52,7 +52,7 @@ VOLUME=(mysqlDB!./data:/var/lib/mysql)
 
 ```
 
-### use
+### run
 
 1. run bash backup.sh -f -i -v to backup everything
 2. copy the backup.sh to you local folder run docker -d to download tge backup
@@ -62,6 +62,8 @@ VOLUME=(mysqlDB!./data:/var/lib/mysql)
 
 you can ow sync and copy the docker container with all volumes or/and images
 between the two destinations
+
+**note**
 
 ```
 you can now run "bash backup.sh" with the following parmaters.
@@ -75,8 +77,6 @@ bash backup.sh -r    to restore and import all files in your backup folder to do
 
 you can combine all params like bash backup.sh -f -i -v or any other combination
 ```
-
-**notes**
 
 ```
 set the SERVER variable to the absolute path of your docker directory if you want to use the upload and download funktion to sync files.

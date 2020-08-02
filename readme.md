@@ -12,7 +12,7 @@ date: 02.08.2019
   - [description](#description)
   - [usage](#usage)
     - [init](#init)
-    - [use](#use)
+    - [run](#run)
 - [TODO](#todo)
 
 <!-- /code_chunk_output -->
@@ -87,7 +87,7 @@ PATH musst be set like SERVER='user@XXX.XXX.XXX.XXX:/abspath/to/your/folder'
 
 1. simplefy the setup process or automate
 
-**notes**
+**note**
 
 ```
 i just quickly wrote this to move docker containers that i use frequently.

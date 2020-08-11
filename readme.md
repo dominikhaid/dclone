@@ -3,7 +3,13 @@
 
 # 1. DCLONE
 
-<!-- TOC --> [1. DCLONE](#1-dclone)    - [1.1. DESCRIPTION](#11-description)    - [1.2. USAGE](#12-usage)            - [1.2.0.1. INIT](#1201-init)       - [1.2.1. RUN](#121-run) - [2. TODO](#2-todo)<!-- /TOC -->
+- [1. DCLONE](#1-dclone)
+  - [1.1. DESCRIPTION](#11-description)
+  - [1.2. USAGE](#12-usage)
+    - [1.2.0.1. INIT](#1201-init)
+    * [1.2.1. RUN](#121-run)
+- [2. TODO](#2-todo)
+
 <br />
 <br />
 

@@ -3,18 +3,8 @@
 
 # DCLONE
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- TOC --> [DCLONE](#dclone) - [DESCRIPTION](#description) - [USAGE](#usage) - [INIT](#init) - [RUN](#run) - [TODO](#todo)<!-- /TOC -->
 
-<!-- code_chunk_output -->
-
-- [DCLONE](#dclone)
-  - [description](#description)
-  - [usage](#usage)
-    - [init](#init)
-    - [run](#run)
-- [TODO](#todo)
-
-<!-- /code_chunk_output -->
 <br />
 <br />
 
@@ -32,7 +22,7 @@ How ether it will work with every docker container.
 
 ## USAGE
 
-#### init
+#### INIT
 
 1. copy the backup.sh file in the directory of your docker-compose.yml
 2. open the backup.sh in any text editor
@@ -54,7 +44,7 @@ VOLUME=(mysqlDB!./data:/var/lib/mysql)
 
 ```
 
-### run
+### RUN
 
 1. run bash backup.sh -f -i -v to backup everything
 2. copy the backup.sh to you local folder run docker -d to download tge backup

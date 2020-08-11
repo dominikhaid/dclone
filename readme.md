@@ -13,7 +13,7 @@
 
 <!-- /code_chunk_output -->
 
-## description
+## DESCRIPTION
 
 ```
 DCLONE is a simple shell script. It is used to backup and sync docker container,
@@ -22,7 +22,7 @@ DCLONE is build for working with docker-compose files.
 How ether it will work with every docker container.
 ```
 
-## usage
+## USAGE
 
 #### init
 

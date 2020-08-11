@@ -1,14 +1,13 @@
 <br />
 <br />
 
-# DCLONE
+# 1. DCLONE
 
-<!-- TOC --> [DCLONE](#dclone) - [DESCRIPTION](#description) - [USAGE](#usage) - [INIT](#init) - [RUN](#run) - [TODO](#todo)<!-- /TOC -->
-
+<!-- TOC --> [1. DCLONE](#1-dclone)    - [1.1. DESCRIPTION](#11-description)    - [1.2. USAGE](#12-usage)            - [1.2.0.1. INIT](#1201-init)       - [1.2.1. RUN](#121-run) - [2. TODO](#2-todo)<!-- /TOC -->
 <br />
 <br />
 
-## DESCRIPTION
+## 1.1. DESCRIPTION
 
 ```
 DCLONE is a simple shell script. It is used to backup and sync docker container,
@@ -20,9 +19,9 @@ How ether it will work with every docker container.
 <br />
 <br />
 
-## USAGE
+## 1.2. USAGE
 
-#### INIT
+#### 1.2.0.1. INIT
 
 1. copy the backup.sh file in the directory of your docker-compose.yml
 2. open the backup.sh in any text editor
@@ -44,7 +43,7 @@ VOLUME=(mysqlDB!./data:/var/lib/mysql)
 
 ```
 
-### RUN
+### 1.2.1. RUN
 
 1. run bash backup.sh -f -i -v to backup everything
 2. copy the backup.sh to you local folder run docker -d to download tge backup
@@ -75,7 +74,7 @@ set the SERVER variable to the absolute path of your docker directory if you wan
 PATH musst be set like SERVER='user@XXX.XXX.XXX.XXX:/abspath/to/your/folder'
 ```
 
-# TODO
+# 2. TODO
 
 1. simplefy the setup process or automate
 

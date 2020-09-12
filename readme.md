@@ -1,14 +1,8 @@
 <br />
 <br />
 
-# 1. DCLONE
+# 1. DCLONE - Docker Container Backup Script
 
-- [1. DCLONE](#1-dclone)
-  - [1.1. DESCRIPTION](#11-description)
-  - [1.2. USAGE](#12-usage)
-    - [1.2.0.1. INIT](#1201-init)
-    * [1.2.1. RUN](#121-run)
-- [2. TODO](#2-todo)
 
 <br />
 <br />
@@ -16,77 +10,36 @@
 ## 1.1. DESCRIPTION
 
 ```
-DCLONE is a simple shell script. It is used to backup and sync docker container,
-images and volumes to easly or sync everything from to another place.
-DCLONE is build for working with docker-compose files.
-How ether it will work with every docker container.
+Shell script used to backup and restore Docker container with all images and volumes.
+Remote up and download backup via sftp. Designed for docker-compose.yml files.
 ```
 
 <br />
 <br />
 
-## 1.2. USAGE
+## 1.2. Setup
 
-#### 1.2.0.1. INIT
-
-1. copy the backup.sh file in the directory of your docker-compose.yml
+1. place backup.sh in the same folder as your docker-compose.yml
 2. open the backup.sh in any text editor
-3. set the IMAGES variable like IMAGES=(imagename1 imagename2)
-4. set the CONTAINER variable like CONTAINER=(MyContainer1 MyContainer2)
-5. set VOLUME variables like VOLUME=(MyContainer1!volumeName:/path/in/docker
-   MyContainer2!./mount/path:/path/in/docker)
+3. set the variables
 
-**note**
+``` 
 
-```
-volumes schema is ContainerName then ! to split the string then VolumeName:/path/in/docker
-or ContainerName then ! to split the string then ./local/path:/path/in/docker
-
-example named volume:
-VOLUME=(mysqlDB!data:/var/lib/mysql)
-or:
-VOLUME=(mysqlDB!./data:/var/lib/mysql)
-
+IMAGES=(nginx php) -> images to backup as shell array
+CONTAINER=(nginx php-fpm) -> containers to backup as shell array
+VOLUME=(nginx!./nginx:/etc/nginx!./html:/usr/share/nginx/html php-fpm!./html:/usr/share/nginx/html)  -> combination container!volumePath as array
+SERVER='user@0.0.0.0:/abspath/to/docker-compose/folder' -> remote host for upload and download function
+BACKUPFOLDER=docker-backups
 ```
 
-### 1.2.1. RUN
 
-1. run bash backup.sh -f -i -v to backup everything
-2. copy the backup.sh to you local folder run docker -d to download tge backup
-   folder created in last step
-3. run bash backupösh -r to restore the saved files to you local docker
-   instance
+### 1.3 Options
 
-you can ow sync and copy the docker container with all volumes or/and images
-between the two destinations
+1. bash backup.sh -f -i -v -> backup docker files, images, volumes
+3. bash backup.sh -f  -> backup docker files
+4. bash backup.sh -i  -> backup docker images
+4. bash backup.sh -v  -> backup docker volumes
+5. bash backup.sh -r  -> backup restore all files from the backup-foilder
+6. bash backup.sh -u -> upload all files from back-folder to remote host
+6. bash backup.sh -d -> download all files from the remote host to the backup-folder
 
-**note**
-
-```
-you can now run "bash backup.sh" with the following parmaters.
-
-bash backup.sh -f    backup files like docker-compose.yml / DOCKERFILE / .dockerignore
-bash backup.sh -i    backup the defined images
-bash backup.sh -v    backup the defined volumes
-bash backup.sh -d    to download the backup folder from the defined server to your folder
-bash backup.sh -u    to upload the backup folder from you location to the server
-bash backup.sh -r    to restore and import all files in your backup folder to docker
-
-you can combine all params like bash backup.sh -f -i -v or any other combination
-```
-
-```
-set the SERVER variable to the absolute path of your docker directory if you want to use the upload and download funktion to sync files.
-PATH musst be set like SERVER='user@XXX.XXX.XXX.XXX:/abspath/to/your/folder'
-```
-
-# 2. TODO
-
-1. simplefy the setup process or automate
-
-**note**
-
-```
-i just quickly wrote this to move docker containers that i use frequently.
-feel free to use add or change it
-```

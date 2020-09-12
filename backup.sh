@@ -8,10 +8,10 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 options=($(echo $@ | tr " " "\n"))
 
 
-IMAGES=(mysql) 
-CONTAINER=(mysqlDB)
-VOLUME=(mysqlDB!data:/var/lib/mysql)
-SERVER='root@178.254.31.13:/var/www/vhosts/dominikhaid.de/dev.dominikhaid.de/docker/mysql'
+IMAGES=(nginx php) 
+CONTAINER=(nginx php-fpm)
+VOLUME=(nginx!./nginx:/etc/nginx!./html:/usr/share/nginx/html php-fpm!./html:/usr/share/nginx/html)
+SERVER='user@0.0.0.0:/abspath/to/docker-compose/folder'
 BACKUPFOLDER=docker-backups
 
 

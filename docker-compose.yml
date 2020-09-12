@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  nginx-server:
+    depends_on:
+      - phpfpm
+    container_name: nginx
+    restart: unless-stopped
+    image: nginx:latest
+    ports:
+      - '8009:80'
+    volumes:
+      - ./nginx:/etc/nginx
+      - ./html:/usr/share/nginx/html
+    networks:
+      my-bridge:
+        ipv4_address: 172.29.0.4
+  phpfpm:
+    container_name: php-fpm
+    restart: unless-stopped
+    image: php:7.3-fpm
+    # ports:
+    #   - '9000:9000'
+    volumes:
+      - ./html:/usr/share/nginx/html
+    networks:
+      my-bridge:
+        ipv4_address: 172.29.0.5
+networks:
+  my-bridge:
+    external: true
+volumes:
+  nginx:

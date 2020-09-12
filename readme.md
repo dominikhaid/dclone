@@ -7,7 +7,7 @@
 <br />
 <br />
 
-## 1.1. DESCRIPTION
+## 1.1. Description
 
 ```
 Shell script used to backup and restore Docker container with all images and volumes.
@@ -28,7 +28,7 @@ Remote up and download backup via sftp. Designed for docker-compose.yml files.
 IMAGES=(nginx php) -> images to backup as shell array
 CONTAINER=(nginx php-fpm) -> containers to backup as shell array
 VOLUME=(nginx!./nginx:/etc/nginx!./html:/usr/share/nginx/html php-fpm!./html:/usr/share/nginx/html)  -> combination container!volumePath as array
-SERVER='user@0.0.0.0:/abspath/to/docker-compose/folder' -> remote host for upload and download function
+SERVER='user@0.0.0.0:/abspath/to/docker-compose/folder' -> remote host for upload/download function
 BACKUPFOLDER=docker-backups
 ```
 
